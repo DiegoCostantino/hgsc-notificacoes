@@ -1,5 +1,7 @@
 import PortalNotificacao from "./PortalNotificacao";
+import PortalGestao from "./PortalGestao";
 
 export default function App() {
-  return <PortalNotificacao />;
+  const ehGestao = window.location.pathname.startsWith("/gestao");
+  return ehGestao ? <PortalGestao /> : <PortalNotificacao />;
 }
